@@ -11,3 +11,14 @@ def count_words(filepath):
     for word in words:
         counter += 1
     print(f"{counter} words found in the document")
+
+
+def count_characters(filepath):
+    char_dict = {}
+    file_contents = get_book_text(filepath)
+    for char in file_contents:
+        if char.lower() not in char_dict:
+            char_dict[char.lower()] = 1
+        else:
+            char_dict[char.lower()] += 1
+    print(char_dict)
