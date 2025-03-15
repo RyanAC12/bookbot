@@ -10,7 +10,7 @@ def count_words(filepath):
     counter = 0
     for word in words:
         counter += 1
-    print(f"{counter} words found in the document")
+    return counter
 
 
 def count_characters(filepath):
@@ -33,4 +33,4 @@ def sort_characters(filepath):
         individual_dict = {"char": key, "num": char_dict[key]}
         sort_list.append(individual_dict)
     sort_list.sort(reverse=True, key=sort_on)
-    print(sort_list)
+    return sort_list
