@@ -26,10 +26,11 @@ def count_characters(filepath):
 def sort_on(dict):
     return dict["num"]
 
-def sort_characters(dict):
+def sort_characters(filepath):
+    char_dict = count_characters(filepath)
     sort_list = []
-    for key in dict:
-        individual_dict = {"char": key, "num": dict[key]}
+    for key in char_dict:
+        individual_dict = {"char": key, "num": char_dict[key]}
         sort_list.append(individual_dict)
     sort_list.sort(reverse=True, key=sort_on)
     print(sort_list)
