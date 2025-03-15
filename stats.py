@@ -21,4 +21,15 @@ def count_characters(filepath):
             char_dict[char.lower()] = 1
         else:
             char_dict[char.lower()] += 1
-    print(char_dict)
+    return char_dict
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_characters(dict):
+    sort_list = []
+    for key in dict:
+        individual_dict = {"char": key, "num": dict[key]}
+        sort_list.append(individual_dict)
+    sort_list.sort(reverse=True, key=sort_on)
+    print(sort_list)
