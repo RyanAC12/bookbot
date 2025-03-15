@@ -1,4 +1,5 @@
 from stats import count_words, sort_characters
+import sys
 
 
 def report(filepath):
@@ -16,10 +17,10 @@ def report(filepath):
     
 
 def main():
-    #file_contents = get_book_text("books/frankenstein.txt")
-    #print(file_contents)
-    #count_words("books/frankenstein.txt")
-    #sort_characters("books/frankenstein.txt")
-    report("books/frankenstein.txt")
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        report(sys.argv[1])
 
 main()
